@@ -1,33 +1,34 @@
+import paneerTikkaImage from "./assets/paneerTikka.avif";
+import butterChickenImage from "./assets/butterChicken.avif";
+import chickenBiryaniImage from "./assets/chickenBiryani.avif";
+import masalaDosaImage from "./assets/masalaDosa.avif";
+import palakPaneerImage from "./assets/palakPaneer.avif";
+
 const menuItems = [
     {
         name : "Paneer Tikka Masala",
         price: 250,
-        coverImage : "./assets/PaneerTikka.jpg"
+        coverImage : paneerTikkaImage
     },
     {
         name: "Butter Chicken",
         price: 320,
-        coverImage: "./assets/ButterChicken.jpg"
+        coverImage: butterChickenImage
     },
     {
         name: "Chicken Biryani",
         price: 280,
-        coverImage: "./assets/ChickenBiryani.jpg"
+        coverImage: chickenBiryaniImage
     },
     {
         name: "Masala Dosa",
         price: 180,
-        coverImage: "./assets/MasalaDosa.jpg"
-    },
-    {
-        name: "Chole Bhature",
-        price: 200,
-        coverImage: "./assets/CholeBhature.jpg"
+        coverImage: masalaDosaImage
     },
     {
         name: "Palak Paneer",
         price: 240,
-        coverImage: "./assets/PalakPaneer.jpg"
+        coverImage: palakPaneerImage
     }
 ];
 

@@ -1,3 +1,429 @@
-*{
-    border: 2px solid red;
+/* ===========================
+   Josh Comeau CSS Reset
+=========================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:not(dialog) {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: Georgia, serif;
+    overflow: hidden;
+    background: black;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    color: white;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(181, 136, 52, .75);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(214, 170, 84, .9);
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+nav {
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    background: rgba(15, 10, 5, .95);
+
+    border-bottom: 2px solid #7b5b2d;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.5);
+}
+
+nav button {
+
+    cursor: pointer;
+
+    padding: 10px 28px;
+
+    color: white;
+
+    background: transparent;
+
+    border: 2px solid #b58b4a;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: .25s;
+}
+
+nav button:hover {
+
+    background: #b58b4a;
+
+    color: black;
+
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Main Content
+=========================== */
+
+#content {
+
+    position: relative;
+
+    height: calc(100vh - 70px);
+
+    width: 100vw;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* Dark cinematic overlay */
+
+#content::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+
+}
+
+#content>* {
+
+    position: relative;
+
+    z-index: 1;
+
+    animation: fade .35s ease;
+}
+
+/* ===========================
+   Home Page
+=========================== */
+
+#homeDiv {
+
+    width: min(700px, 90%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 40px;
+
+    border-radius: 35px;
+
+    background: rgba(20,20,20,.55);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.45);
+}
+
+#homeDiv img {
+
+    width: 320px;
+
+    height: auto;
+
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
+}
+
+#homeDiv p {
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+#homeDiv button {
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    padding: 14px 34px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #b58b4a;
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: .25s;
+}
+
+#homeDiv button:hover {
+
+    transform: translateY(-3px);
+
+    background: #d4aa54;
+}
+
+/* ===========================
+   Menu Page
+=========================== */
+
+#menuDiv {
+
+    width: min(1200px, 100%);
+
+    height: 100%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+    gap: 35px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding: 40px;
+}
+
+.foodItem {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    border-radius: 28px;
+
+    background: rgba(18,18,18,.6);
+
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,.4);
+
+    transition: .3s;
+}
+
+.foodItem:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 25px 45px rgba(0,0,0,.55);
+}
+
+.foodItem img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+}
+
+.foodItem h3 {
+
+    font-size: 1.6rem;
+
+    color: white;
+}
+
+.foodItem p {
+
+    text-align: center;
+
+    color: rgba(255,255,255,.9);
+}
+
+/* ===========================
+   Contact Page
+=========================== */
+
+#contactDiv {
+
+    width: min(850px, 90%);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    padding: 40px;
+
+    border-radius: 35px;
+
+    background: rgba(20,20,20,.58);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.45);
+}
+
+#contactLabel {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    color: #d8b15b;
+
+    margin-bottom: 10px;
+}
+
+#contactDiv p {
+
+    line-height: 2;
+
+    color: white;
+}
+
+#contactDiv strong {
+
+    color: #d8b15b;
+}
+
+/* ===========================
+   Fade Animation
+=========================== */
+
+@keyframes fade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
 }
